@@ -40,49 +40,55 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
+        <div class="container hero-container">
+            <!-- Left Side: Copy and Promise -->
+            <div class="hero-left">
+                <!-- Warning Badge -->
+                <div class="hero-badge warning" id="warning-badge">
+                    <span class="pulse-dot"></span>
+                    ⚠️ ADVERTENCIA: Usa esto bajo tu propio riesgo. Cambiará su mente para siempre.
+                </div>
 
-            <!-- Warning Badge -->
-            <div class="hero-badge warning" id="warning-badge"
-                style="background: linear-gradient(135deg,#8B0000,#FF2020); color: white; font-weight: 900; padding: 0.6rem 1.4rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; box-shadow: 0 0 25px rgba(255,32,32,0.5); animation: pulse 2s infinite;">
-                ⚠️ AVISO: No uses esto si no quieres ser "el problema" en su vida.
-            </div>
+                <h1 class="hero-title" id="hero-headline">
+                    Este <span class="gradient-text-fire">"Estímulo Sucio"</span> de 7 palabras que le mete un <span class="gradient-text-neon">vicio brutal</span> en la cabeza a cualquier mujer casada y la deja <span class="gradient-text-fire">loca por ti...</span>
+                </h1>
 
-            <h1 class="hero-title" id="hero-headline">
-                El <span class="gradient-text">"Gatillo Prohibido"</span> de 9 palabras que activa el <span class="gradient-text">Instinto de Persecución</span> y hace que su cuerpo quiera acostarse contigo esta madrugada
-            </h1>
-
-            <p class="hero-subtitle"
-                style="font-size: 1.15rem; color: #b0b8cc; margin-top: 1rem; max-width: 760px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-                Funciona incluso si te ha dejado en visto por semanas. O si ella es casada y <strong style="color:#D4AF37">"fiel"</strong>.
-            </p>
-
-            <!-- Caixa científica -->  
-            <div id="science-quote" style="background: rgba(0,200,255,0.06); border: 1px solid rgba(0,200,255,0.25); border-left: 3px solid #00C8FF; padding: 1.2rem 1.8rem; border-radius: 4px; margin: 2rem auto; max-width: 700px; text-align: left;">
-                <p style="font-size: 1rem; color: #c0d8e8; margin: 0; line-height: 1.7;">
-                    Lo que te voy a mostrar no es un "consejito" de seducción. Es biología básica. Su cerebro está <strong style="color:#00C8FF;">programado para ignorar lo fácil</strong> y perseguir lo que parece estar escapándose. Si presionas el botón correcto, el juego cambia al instante.
+                <p class="hero-subtitle">
+                    Funciona incluso si te ha dejado en visto por semanas. O si ella es casada y <span class="highlight-gold">"fiel"</span>.
                 </p>
+
+                <!-- Caixa científica -->  
+                <div id="science-quote" class="hero-science-box">
+                    <p>
+                        Lo que te voy a mostrar no es un "consejito" de seducción. Es biología básica. Su cerebro está <strong style="color: var(--secondary);">programado para ignorar lo fácil</strong> y perseguir lo que parece estar escapándose. Si presionas el botón correcto, el juego cambia al instante.
+                    </p>
+                </div>
             </div>
 
-            <!-- Imagem Prova Social Hero -->
-            <div style="text-align: center; margin: 2rem 0;">
-                <img src="images/DEPOIMENTO INICIAL OUTRO.png" alt="Resultado: Si yo supiera que era tan fácil"
-                    style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.7); border: 1px solid rgba(212,175,55,0.3);">
-            </div>
+            <!-- Right Side: Visual Proof, Benefits and CTA -->
+            <div class="hero-right">
+                <div class="hero-card">
+                    <!-- Imagem Prova Social Hero -->
+                    <div class="hero-image-container">
+                        <img src="images/depoimento-first-fold.png" alt="Resultado: Ahora sí, empezando el fin de semana" class="hero-proof-image">
+                    </div>
 
-            <div class="hero-benefit" id="hero-benefit-1">
-                <span class="checkmark">👁️</span>
-                <p>Ella comienza a <strong>vigilar tu Instagram</strong> — mira a quién seguiste, quién le dio me gusta a tus fotos e intenta descubrir dónde estás.</p>
+                    <div class="hero-benefits">
+                        <div class="hero-benefit-item">
+                            <span class="benefit-icon">👁️</span>
+                            <p>Ella comienza a <strong>vigilar tu Instagram</strong> — mira a quién seguiste e intenta descubrir dónde estás.</p>
+                        </div>
+                        <div class="hero-benefit-item">
+                            <span class="benefit-icon">💬</span>
+                            <p>Ella <strong>te saca conversación de la nada</strong> — manda un "hola, desaparecido" solo para ver si respondes.</p>
+                        </div>
+                        <div class="hero-benefit-item">
+                            <span class="benefit-icon">🧠</span>
+                            <p>Ella siente una <strong>opresión en el pecho</strong> cuando tardas en responder. Necesita tu atención para sentirse bien.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="hero-benefit" id="hero-benefit-2">
-                <span class="checkmark">💬</span>
-                <p>Ella <strong>te saca conversación de la nada</strong> — manda un "hola, desaparecido" o cualquier excusa solo para ver si todavía respondes.</p>
-            </div>
-            <div class="hero-benefit" id="hero-benefit-3">
-                <span class="checkmark">🧠</span>
-                <p>Ella siente una <strong>opresión en el pecho</strong> cuando tardas en responder. No entiende por qué, pero <em>necesita</em> tu atención para sentirse bien de nuevo.</p>
-            </div>
-
         </div>
     </section>
 
@@ -126,7 +132,7 @@
         <div class="container">
             <h2 class="section-title">Con el <span class="gradient-text">Instinto de Persecución</span>, dejas de ser el tipo que 'lo intenta' y te conviertes en el hombre que ella siente <span class="gradient-text">necesidad de conquistar.</span></h2>
             <div class="before-after-image">
-                <img src="images/antes-despues.png" alt="Antes y Después con el Instinto de Persecución"
+                <img src="images/antes-despues-novo.png" alt="Antes y Después con el Instinto de Persecución"
                     style="width: 100%; max-width: 1000px; margin: 0 auto; display: block; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
             </div>
         </div>

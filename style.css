@@ -102,6 +102,13 @@ h6 {
     background-clip: text;
 }
 
+.gradient-text-fire {
+    background: var(--gradient-fire);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
@@ -249,68 +256,331 @@ h6 {
     background: rgba(15, 15, 30, 0.7);
 }
 
-.hero-content {
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-.hero-badge {
+.hero-left {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-badge.warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #8B0000, #FF2020);
+    color: white;
+    font-weight: 900;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 25px rgba(255, 32, 32, 0.4);
+    animation: pulse 2s infinite;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-    animation: fadeInDown 1s ease;
+    box-shadow: 0 0 8px #fff;
+    animation: beacon 1.5s infinite;
+}
+
+@keyframes beacon {
+    0% { transform: scale(0.9); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.4; }
+    100% { transform: scale(0.9); opacity: 1; }
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    line-height: 1.2;
     margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease 0.2s both;
+    font-weight: 900;
+    text-align: left;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease 0.4s both;
-}
-
-.hero-description {
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: #b0b8cc;
     margin-bottom: 2rem;
-    color: var(--text-gray);
-    animation: fadeInUp 1s ease 0.6s both;
+    line-height: 1.7;
+    text-align: left;
+    max-width: 680px;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
 }
 
-.hero-benefit {
+.highlight-gold {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.hero-science-box {
+    background: rgba(0, 200, 255, 0.04);
+    border: 1px solid rgba(0, 200, 255, 0.2);
+    border-left: 4px solid var(--secondary);
+    padding: 1.5rem 1.8rem;
+    border-radius: 8px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+.hero-science-box p {
+    font-size: 1rem;
+    color: #c0d8e8;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.45s both;
+}
+
+.hero-card {
+    background: rgba(22, 22, 30, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 30px 24px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(212, 175, 55, 0.05);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-image-container {
+    text-align: center;
+    width: 100%;
+}
+
+.hero-proof-image {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    transition: transform 0.4s ease;
+}
+
+.hero-proof-image:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+.hero-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.hero-benefit-item {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 1rem;
-    text-align: left;
-    animation: fadeInUp 1s ease 0.8s both;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
 }
 
-.hero-benefit .checkmark {
-    font-size: 1.5rem;
+.hero-benefit-item:hover {
+    transform: translateY(-2px);
+    background: rgba(212, 175, 55, 0.05);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.1);
+}
+
+.hero-benefit-item .benefit-icon {
+    font-size: 1.3rem;
     flex-shrink: 0;
+    margin-top: 2px;
 }
 
-.hero-benefit p {
+.hero-benefit-item p {
+    font-size: 0.95rem;
+    color: #e0e6ed;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.hero-benefit-item strong {
+    color: #fff;
+}
+
+/* ============================================
+   WHATSAPP DARK MODE MOCKUP (DEPOIMENTO BLACK)
+   ============================================ */
+.whatsapp-chat {
+    background: #0b141a;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.15) 0%, transparent 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 200, 255, 0.05);
+}
+
+.chat-header {
+    background: #202c33;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chat-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #202c33;
+}
+
+.chat-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.chat-name {
+    color: #e9edef;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.chat-status {
+    color: #00a884;
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+.chat-actions {
+    color: #aebac1;
+    display: flex;
+    gap: 15px;
     font-size: 1.1rem;
 }
 
-.hero-content .cta-button {
-    margin-top: 2rem;
-    animation: fadeInUp 1s ease 1s both;
+.chat-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 250px;
+}
+
+.chat-date {
+    background: #182229;
+    color: #8696a0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    align-self: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.msg {
+    max-width: 85%;
+    padding: 8px 12px 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.msg.sent {
+    background: #005c4b;
+    color: #e9edef;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+.msg.received {
+    background: #202c33;
+    color: #e9edef;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.msg.received.highlight-msg {
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    background: linear-gradient(135deg, #202c33 0%, #292114 100%);
+}
+
+.msg-text {
+    margin: 0;
+}
+
+.msg-time {
+    display: block;
+    text-align: right;
+    font-size: 0.65rem;
+    color: #8696a0;
+    margin-top: 4px;
+}
+
+.read-ticks {
+    color: #53bdeb;
+    font-weight: bold;
+    margin-left: 2px;
 }
 
 @keyframes fadeInDown {
@@ -318,7 +588,6 @@ h6 {
         opacity: 0;
         transform: translateY(-30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -330,10 +599,66 @@ h6 {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Ajuste Responsivo da Primeira Dobra */
+@media (max-width: 968px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    /* Achata a hierarquia para permitir ordenação direta com CSS Grid */
+    .hero-left, .hero-right {
+        display: contents;
+    }
+    
+    .hero-badge.warning {
+        order: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-title {
+        order: 2;
+        text-align: center;
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        order: 3;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* O Card de Depoimento vai para 4º lugar, subindo acima do texto científico */
+    .hero-card {
+        order: 4;
+        max-width: 480px;
+        margin: 10px auto;
+        padding: 24px 18px;
+        border-color: rgba(212, 175, 55, 0.3);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* A Caixa Científica desce para 5º lugar */
+    .hero-science-box {
+        order: 5;
+        text-align: center;
+        margin-top: 15px;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
